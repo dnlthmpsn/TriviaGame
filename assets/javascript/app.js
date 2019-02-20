@@ -16,8 +16,15 @@ var masterTimer;
 //Functions 
 //========================
 
+
 function keepScore(){
     //correct/inccorect in a scoreboard. animation included. beyond simple..
+}
+
+function newGame(){
+    //on click begin master timer
+    keepScore();    
+    nextQuestion();
 }
 
 
@@ -26,27 +33,28 @@ function moveOn(){
     //if user hits next question on the showQuestionResult screen
 }
 
+function renderGameResults(){
+    //once all questions are responded to:
+        // render GameResults screen
+            //scoreboard with correct and incorrect
+           newGame();
+            //option to play again         
+}
+
+function showQuestionResult(){
+    //render the appropriate content for correct/incorrect response
+    moveOn();
+}
+
 function nextQuestion(){
      //function timer: they start with 10 seconds, and the next question adds the time remaining from a correct previous responds. 
     //function checkInput: if user input matches correctResponse, render correctAsset, ifNot render correct answer and incorrectAsset
-
+    showQuestionResult();
+    renderGameResults();
 }
 
-function newGame(){
-    //begin master timer
-    nextQuestion();
 
-}
    
-    
-function showQuestionResult(){
- //render the appropriate content for correct/incorrect response
- moveOn();
-}
-       
-
-//function renderGameResults: after all questions are responded to
-    //function newGame
 
 
 
@@ -54,3 +62,7 @@ function showQuestionResult(){
 
 //Main Process
 //========================
+
+function app(){
+    newGame();
+}
